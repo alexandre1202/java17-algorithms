@@ -2,6 +2,8 @@ package br.com.aab.algorithms;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 public class FindFirstNonRepeatedChar {
     static char findV1(String inputStr) {
@@ -29,6 +31,29 @@ public class FindFirstNonRepeatedChar {
         }
         return Character.MIN_VALUE;
     }
+
+    static char findV3(String input) {
+        Map<Character, Long> map = input.codePoints()
+                .mapToObj(c -> Character.valueOf((char)c))
+                .collect(Collectors.groupingBy(Function.identity(), LinkedHashMap::new, Collectors.counting()));
+        return map.entrySet().stream()
+                .filter(e -> e.getValue() == 1)
+                .findAny()
+                .map(Map.Entry::getKey)
+                .orElseGet(() -> Character.MIN_VALUE);
+    }
+
+    static char findV4(String input) {
+         return input.codePoints()
+                .mapToObj(c -> Character.valueOf((char)c))
+                .collect(Collectors.groupingBy(Function.identity(), LinkedHashMap::new, Collectors.counting()))
+                .entrySet().stream()
+                .filter(e -> e.getValue() == 1)
+                .findAny()
+                .map(Map.Entry::getKey)
+                .orElseGet(() -> Character.MIN_VALUE);
+    }
+
     public static void main(String[] args) {
         System.out.println("V1 -> aaabbcccdeeefffffxxz = " + findV1("aaabbcccdeeefffffxxz"));
         System.out.println("V2 -> aaabbcccdeeefffffxxz = " + findV2("aaabbcccdeeefffffxxz"));
