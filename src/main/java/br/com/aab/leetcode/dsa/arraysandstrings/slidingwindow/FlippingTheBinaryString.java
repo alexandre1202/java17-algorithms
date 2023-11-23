@@ -1,4 +1,4 @@
-package br.com.aab.leetcode.dsa.slidingwindow;
+package br.com.aab.leetcode.dsa.arraysandstrings.slidingwindow;
 
 public class FlippingTheBinaryString {
     public static void main(String[] args) {

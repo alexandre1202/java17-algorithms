@@ -1,4 +1,4 @@
-package br.com.aab.leetcode.dsa.twopointers;
+package br.com.aab.leetcode.dsa.arraysandstrings.twopointers;
 
 import java.util.ArrayList;
 import java.util.Arrays;

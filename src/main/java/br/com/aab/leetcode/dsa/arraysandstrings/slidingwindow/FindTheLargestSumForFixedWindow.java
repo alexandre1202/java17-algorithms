@@ -1,4 +1,4 @@
-package br.com.aab.leetcode.dsa.slidingwindow;
+package br.com.aab.leetcode.dsa.arraysandstrings.slidingwindow;
 
 import java.util.Arrays;
 import java.util.TreeSet;

@@ -1,4 +1,4 @@
-package br.com.aab.leetcode.dsa.twopointers;
+package br.com.aab.leetcode.dsa.arraysandstrings.twopointers;
 
 public class FindingCharsInSubSequence {
     private boolean found(String s, String t) {
