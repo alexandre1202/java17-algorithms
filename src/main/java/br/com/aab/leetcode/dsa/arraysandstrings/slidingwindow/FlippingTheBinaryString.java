@@ -2,8 +2,9 @@ package br.com.aab.leetcode.dsa.arraysandstrings.slidingwindow;
 
 public class FlippingTheBinaryString {
     public static void main(String[] args) {
-        String input = "1101100111";
         FlippingTheBinaryString exec = new FlippingTheBinaryString();
+
+        String input = "1101100111";
         int result = exec.longestBinary(input);
         System.out.printf("The size of the biggest binary [%s] is [%d]%n", input, result);
 
