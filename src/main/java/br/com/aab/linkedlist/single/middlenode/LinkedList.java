@@ -13,7 +13,11 @@ class LinkedList implements List {
 		linkedList.insert(14);
 		linkedList.insert(15);
 
-		System.out.printf("The middle of the linked list is %d", linkedList.getMiddleNode().getData());;
+		//System.out.printf("The middle of the linked list is %d", linkedList.getMiddleNode().getData());;
+
+		linkedList.reverse();
+		System.out.printf("List of reversed data%n");
+		linkedList.traverse();
 	}
 
 	// this is the head node or root node
@@ -82,6 +86,20 @@ class LinkedList implements List {
 	public int size() {
 		return numOfItems;
 	}
+
+	@Override
+	public void reverse() {
+		Node currentNode = this.root;
+		Node previousNode = null;
+		Node nextNode = null;
+		while (Objects.nonNull(currentNode)) {
+			nextNode = currentNode.getNextNode();
+			currentNode.setNextNode(previousNode);
+			previousNode = currentNode;
+			currentNode = nextNode;
+		}
+		this.root = previousNode;
+	}
 }
 
 interface List {
@@ -89,6 +107,7 @@ interface List {
     public void insert(int data);
     public void traverse();
     public int size();
+	void reverse();
 }
 
 class Node {
