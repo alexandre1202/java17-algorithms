@@ -1,4 +1,4 @@
-package br.com.aab.linkedlist.single;
+package br.com.aab.linkedlist.single.generic;
 
 import java.util.Objects;
 import lombok.Getter;
