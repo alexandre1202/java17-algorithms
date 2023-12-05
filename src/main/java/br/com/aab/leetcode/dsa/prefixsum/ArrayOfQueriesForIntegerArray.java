@@ -31,6 +31,7 @@ public class ArrayOfQueriesForIntegerArray {
          *      the answer is [true, false, true].
          * For each query, the subarray sums are [12, 14, 12].
          * By Leetcode
+         * The prefix are [1, 7, 10, 12, 19, 21]
          */
         int[] nums = {1, 6, 3, 2, 7, 2};
         int[][] queries = {{0, 3}, {2, 5}, {2, 4}};
