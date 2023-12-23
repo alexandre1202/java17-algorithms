@@ -12,9 +12,4 @@ public class FindingTheMissingNumber {
         long result = (high + lower) * (high - lower + 1) / 2 - sum;
         return Long.valueOf(result).intValue();
     }
-
-    public static void main(String[] args) {
-        System.out.println("V1 -> {1,2,3,5}, 4 = " + missingNumberV1(new int[]{1,2,3,5}));
-        System.out.println("V1 -> {2}, 1 = " + missingNumberV1(new int[]{2}));
-    }
 }
