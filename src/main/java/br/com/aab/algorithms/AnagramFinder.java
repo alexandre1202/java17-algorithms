@@ -2,12 +2,8 @@ package br.com.aab.algorithms;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Map;
-import java.util.Set;
 import java.util.stream.Collectors;
 
 /**
@@ -25,15 +21,12 @@ import java.util.stream.Collectors;
  */
 public class AnagramFinder {
     public List<List<String>> findAnagrams(String[] words) {
-        var groupedAnagrams = new HashMap<String, Set<String>>();
-        for (int i = 0; i < words.length; i++) {
-            final String sortedWord = charToSortedString(words[i]);
-            groupedAnagrams.computeIfAbsent(sortedWord, k -> new HashSet<>()).add(words[i]);
-        }
-        return groupedAnagrams.values().stream().map(ArrayList::new).collect(Collectors.toList());
+        return Arrays.stream(words)
+                .collect(Collectors.groupingBy(this::sortedWord, HashMap::new, Collectors.toSet()))
+                .values().stream().map(ArrayList::new)
+                .collect(Collectors.toList());
     }
-
-    private String charToSortedString(String word) {
+    private String sortedWord(String word) {
         char[] charWord = word.toCharArray();
         Arrays.sort(charWord);
         return new String(charWord);
