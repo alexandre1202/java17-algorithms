@@ -1,5 +1,8 @@
 package br.com.aab.algorithms;
 
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Hashtable;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.function.Function;
@@ -54,8 +57,22 @@ public class FindFirstNonRepeatedChar {
                 .orElseGet(() -> Character.MIN_VALUE);
     }
 
+    static char findV5(String input) {
+        var result = input.codePoints().boxed()
+                .collect(Collectors.groupingBy(
+                        Function.identity(), HashMap::new, Collectors.counting()
+                ))
+                .entrySet().stream()
+                .filter(e -> e.getValue() == 1)
+                .map(Map.Entry::getKey)
+                .findFirst()
+                .orElse(0);
+        return (char) result.intValue();
+    }
+
     public static void main(String[] args) {
         System.out.println("V1 -> aaabbcccdeeefffffxxz = " + findV1("aaabbcccdeeefffffxxz"));
         System.out.println("V2 -> aaabbcccdeeefffffxxz = " + findV2("aaabbcccdeeefffffxxz"));
+        System.out.println("V5 -> aaabbcccdeeefffffxxz = " + findV5("aaabbcccdeeefffffxxz"));
     }
 }
