@@ -9,7 +9,7 @@ import java.util.Queue;
 
 public class LeastRecentUsed {
     public List<Integer> getCachedValuesVMap(int[] pages, final int capacity) {
-        Map<Integer, Integer> cache = new LinkedHashMap<>(capacity, 0.75f, true) {
+        final Map<Integer, Integer> cache = new LinkedHashMap<>(capacity, 0.75f, true) {
             @Override
             protected boolean removeEldestEntry(Map.Entry<Integer, Integer> eldest) {
                 return size() > capacity;
