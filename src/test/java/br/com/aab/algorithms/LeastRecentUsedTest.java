@@ -12,14 +12,9 @@ class LeastRecentUsedTest {
     List<Integer> expected = Arrays.asList(4,0,3,2);
 
     @Test
-    public void testThirteenNumbersWithCapacityFourWithQueue() {
-        List<Integer> cachedValues = lru.getCachedValuesVQueue(pages, capacity);
-        Assertions.assertThat(cachedValues.equals(expected));
-    }
-
-    @Test
     public void testThirteenNumbersWithCapacityFourWithMap() {
         List<Integer> cachedValues = lru.getCachedValuesVMap(pages, capacity);
-        Assertions.assertThat(cachedValues.equals(expected));
+        Assertions.assertThat(cachedValues)
+                .isEqualTo(expected);
     }
 }

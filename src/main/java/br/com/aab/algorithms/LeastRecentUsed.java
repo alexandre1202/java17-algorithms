@@ -8,25 +8,13 @@ import java.util.Map;
 import java.util.Queue;
 
 public class LeastRecentUsed {
-
-    public List<Integer> getCachedValuesVQueue(int[] pages, final int capacity) {
-        Queue<Integer> cache = new LinkedList<>();
-        for (int i = 0; i < pages.length; i++) {
-            if (cache.size() <= capacity) {
-                cache.add(pages[i]);
-            } else {
-                if (cache.contains(pages[i])) {
-                    cache.remove(pages[i]);
-                } else {
-                    cache.poll();
-                }
-            }
-        }
-        return new ArrayList<>(cache);
-    }
-
     public List<Integer> getCachedValuesVMap(int[] pages, final int capacity) {
-        Map<Integer, Integer> cache = new LinkedHashMap<>(capacity, 0.75f, true);
+        Map<Integer, Integer> cache = new LinkedHashMap<>(capacity, 0.75f, true) {
+            @Override
+            protected boolean removeEldestEntry(Map.Entry<Integer, Integer> eldest) {
+                return size() > capacity;
+            }
+        };
         for (int page: pages) {
             cache.put(page, 0);
         }
