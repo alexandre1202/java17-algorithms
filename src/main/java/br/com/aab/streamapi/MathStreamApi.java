@@ -8,5 +8,5 @@ public class MathStreamApi<T> {
         Double result = intStream.average().orElse(-1);
         return result.intValue();
     }
-    
+
 }
