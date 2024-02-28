@@ -41,6 +41,8 @@ public class Anagram {
                 Arrays.toString(chars2),
                 resultAnagramWithSort);
 
+        chars1 = "Alex".toCharArray();
+        chars2 = "Aley".toCharArray();
         boolean resultAnagramWithOutSort = anagram.isAnagramWithOutSort(chars1, chars2);
         System.out.printf(
                 "WithOut sorting the array 1 %s and 2 %s are Anagram [%s]%n",
