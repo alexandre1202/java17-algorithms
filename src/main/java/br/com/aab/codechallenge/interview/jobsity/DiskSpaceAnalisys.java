@@ -1,4 +1,4 @@
-package br.com.aab.hackerrank.jobsity;
+package br.com.aab.codechallenge.interview.jobsity;
 
 import java.util.Arrays;
 import java.util.List;
