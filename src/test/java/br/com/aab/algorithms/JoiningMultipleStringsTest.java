@@ -1,6 +1,5 @@
 package br.com.aab.algorithms;
 
-import br.com.aab.algorithms.JoiningMultipleStrings;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
