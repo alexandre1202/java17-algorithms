@@ -30,6 +30,11 @@ public class CountingDuplicatedChars {
                 ));
     }
 
+    public Map<Character, Long> countDuplicatedCharactersV4(String str) {
+        return str.chars().mapToObj(c -> (char)c)
+                .collect(Collectors.groupingBy(c-> c, Collectors.counting()));
+    }
+
     public static void main(String[] args) {
         CountingDuplicatedChars count = new CountingDuplicatedChars();
         String input = "aaabaccdddd";
@@ -42,5 +47,8 @@ public class CountingDuplicatedChars {
 
         Map<Character, Long> resultLong = count.countDuplicatedCharactersV3(input);
         System.out.printf("V3 = %s%n", resultLong);
+
+        resultLong = count.countDuplicatedCharactersV4(input);
+        System.out.printf("V4 = %s%n", resultLong);
     }
 }
