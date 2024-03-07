@@ -23,6 +23,22 @@ public class CountingDuplicatedChars {
         return result;
     }
 
+    public void countMinMax(String input) {
+        final char[] chars = input.toLowerCase().toCharArray();
+        int indexOfMax = 0;
+        int indexOfMin = 122;
+        int[] alphabetic = new int[26];
+        for (char c: chars) {
+            int index = c - 'a';
+            alphabetic[index]++;
+            indexOfMax = Math.max(alphabetic[index], indexOfMax);
+            indexOfMin = Math.min(alphabetic[index], indexOfMin);
+        }
+        System.out.printf("The character that repeats the most is [%s], occurring [%d] times.%n",
+                (char) ('a' + alphabetic[indexOfMax]), indexOfMax);
+        System.out.printf("The character that repeats the least is [%s], occurring [%d] times.%n",
+                (char) ('a' + alphabetic[indexOfMin]), indexOfMin);
+    }
     public Map<Character, Long> countDuplicatedCharactersV3(String str) {
         return str.chars().mapToObj(c -> (char)c)
                 .collect(Collectors.groupingBy(
@@ -38,6 +54,8 @@ public class CountingDuplicatedChars {
     public static void main(String[] args) {
         CountingDuplicatedChars count = new CountingDuplicatedChars();
         String input = "aaabaccdddd";
+
+        count.countMinMax(input);
 
         var result = count.countDuplicatedCharactersV1(input);
         System.out.printf("V1 = %s%n", result);
