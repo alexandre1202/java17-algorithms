@@ -6,8 +6,8 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class CountingDuplicatedChars {
-    private Map<Character, Integer> result = new HashMap<>();
     public Map<Character, Integer> countDuplicatedCharactersV1(String str) {
+        Map<Character, Integer> result = new HashMap<>();
         char[] charsOfStr = str.toCharArray();
         for (char c: charsOfStr) {
             result.compute(c, (k,v) -> v == null ? 1 : ++v);
@@ -16,7 +16,7 @@ public class CountingDuplicatedChars {
     }
 
     public Map<Character, Integer> countDuplicatedCharactersV2(String str) {
-        result = new HashMap<>();
+        Map<Character, Integer> result = new HashMap<>();
         for (char c: str.toCharArray()) {
             result.merge(c, 1, Integer::sum);
         }
