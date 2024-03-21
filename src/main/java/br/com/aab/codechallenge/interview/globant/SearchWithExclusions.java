@@ -30,13 +30,4 @@ public class SearchWithExclusions {
                 .map(Object::toString)
                 .collect(Collectors.toList());
     }
-
-    public static void main(String[] args) {
-        SearchWithExclusions searchDisney = new SearchWithExclusions();
-        var inputs = List.of("Mickey", "Minnie", "Disney", "Donald", "");
-        inputs.forEach(i -> {
-            List<String> resultForEach = searchDisney.search(i);
-            System.out.printf("The result is %s in case of query is [%s]%n", resultForEach, i);
-        });
-    }
 }
