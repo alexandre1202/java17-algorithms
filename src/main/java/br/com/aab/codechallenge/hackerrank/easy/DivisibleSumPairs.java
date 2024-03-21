@@ -1,4 +1,4 @@
-package br.com.aab.codechallenge.interview.globant.sebastianbenitez;
+package br.com.aab.codechallenge.hackerrank.easy;
 
 import java.util.ArrayList;
 import java.util.HashMap;
