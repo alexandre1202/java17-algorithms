@@ -51,7 +51,8 @@ public class DivisibleSumPairs {
 
         for (int number : numbers) {
             int remainder = number % divisor;
-            count += remainderCount[(divisor - remainder) % divisor];
+            int complement = (divisor - remainder) % divisor;
+            count += remainderCount[complement];
             remainderCount[remainder]++;
         }
 

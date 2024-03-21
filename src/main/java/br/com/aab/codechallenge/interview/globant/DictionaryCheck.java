@@ -1,6 +1,5 @@
-package br.com.aab.codechallenge.interview.globant.lucianopineyrua;
+package br.com.aab.codechallenge.interview.globant;
 
-import java.util.List;
 import java.util.Set;
 
 /**
