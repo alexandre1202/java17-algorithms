@@ -1,5 +1,8 @@
 package br.com.aab.codechallenge.hackerrank.easy;
 
+/**
+ * https://www.hackerrank.com/challenges/kangaroo/problem?isFullScreen=true
+ */
 public class NumberLineJumps {
     public String kangaroo(int x1, int v1, int x2, int v2) {
         return ((v1 > v2) && ((x2 - x1) % (v1 - v2) == 0)) ? "YES" : "NO";

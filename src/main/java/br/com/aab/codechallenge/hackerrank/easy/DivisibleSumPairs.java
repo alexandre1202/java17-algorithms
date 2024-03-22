@@ -1,9 +1,6 @@
 package br.com.aab.codechallenge.hackerrank.easy;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class DivisibleSumPairs {
     public static int divisibleSumPairsBruteForce(int divisor, List<Integer>numbers) {

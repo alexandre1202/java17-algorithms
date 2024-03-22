@@ -4,6 +4,9 @@ import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Objects;
 
+/**
+ * https://www.hackerrank.com/challenges/time-conversion/problem?isFullScreen=true
+ */
 public class TimeConversion {
     public static String timeConversion(String s) {
         if (Objects.isNull(s) || s.trim().length() < 10) return "";

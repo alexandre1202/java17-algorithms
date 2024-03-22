@@ -3,6 +3,9 @@ package br.com.aab.codechallenge.hackerrank.easy;
 import java.util.List;
 import java.util.Objects;
 
+/**
+ * https://www.hackerrank.com/challenges/apple-and-orange/problem?isFullScreen=true
+ */
 class AppleAndOrange {
 
     public void countApplesAndOranges(int s, int t, int a, int b, List<Integer> apples, List<Integer> oranges) {

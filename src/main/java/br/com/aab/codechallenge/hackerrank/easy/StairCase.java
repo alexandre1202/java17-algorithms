@@ -1,5 +1,8 @@
 package br.com.aab.codechallenge.hackerrank.easy;
 
+/**
+ * https://www.hackerrank.com/challenges/staircase/problem?isFullScreen=true
+ */
 public class StairCase {
     public void staircase(int n) {
         for (int i = 1; i <= n; i++) {

@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+/**
+ * https://www.hackerrank.com/challenges/grading/problem?isFullScreen=true
+ */
 public class GradingStudents {
     public List<Integer> gradingStudents(List<Integer> grades) {
         if (Objects.isNull(grades) || grades.size() < 2) return grades;
