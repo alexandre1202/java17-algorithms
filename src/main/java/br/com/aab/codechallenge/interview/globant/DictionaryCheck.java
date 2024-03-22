@@ -14,7 +14,7 @@ import java.util.Set;
  */
 public class DictionaryCheck {
 
-    private Set<String> dictionary = Set.of("hello", "hall", "holy");
+    private final Set<String> dictionary = Set.of("hello", "hall", "holy");
     public boolean isValidPrefix(String prefix) {
         for (String wordFromDictionary: dictionary) {
             if (wordFromDictionary.startsWith(prefix)) return true;
