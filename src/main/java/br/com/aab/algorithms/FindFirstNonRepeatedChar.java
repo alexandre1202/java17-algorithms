@@ -21,7 +21,7 @@ public class FindFirstNonRepeatedChar {
     }
 
     static char findV2(String inputStr) {
-        Map<Character, Integer> map = new LinkedHashMap();
+        Map<Character, Integer> map = new LinkedHashMap<>();
         for (int i = 0; i < inputStr.length(); i++) {
             char letter = inputStr.charAt(i);
             map.compute(letter, (k, v) -> v == null ? 1 : ++v);
