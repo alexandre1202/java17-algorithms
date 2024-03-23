@@ -2,6 +2,7 @@ package br.com.aab.codechallenge.hackerrank.easy;
 
 /**
  * https://www.hackerrank.com/challenges/kangaroo/problem?isFullScreen=true
+ * credits for Nikhil Lohia -> https://www.youtube.com/watch?v=htNoxROxYrk
  */
 public class NumberLineJumps {
     public String kangaroo(int x1, int v1, int x2, int v2) {
